@@ -417,7 +417,7 @@ body {
 
   /* Prevent overlap with Oki button */
   #oki-container {
-    margin-bottom: 50px; /* room for music bar */
+    margin-bottom: 30px; /* room for music bar */
   }
 
   /* Scale down buttons */
