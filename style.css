@@ -1,0 +1,369 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+  background: url("assets/bg2.png") repeat center top;
+  background-size: auto;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+/* ===== SPLASH SCREEN ===== */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("assets/bg3.png") repeat center top;
+  background-size: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#enter-btn {
+  color: rgb(255, 65, 226);
+  font-size: 20px;
+  line-height: 20px;
+  padding: 15px 40px;
+  border-radius: 20px;
+  font-family: 'Libre Baskerville', "Times New Roman", Times, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-image: radial-gradient(rgb(255, 253, 205) 0%, rgb(255, 192, 248) 46%, rgb(228, 232, 255) 100%);
+  box-shadow: rgb(250, 255, 210) 2px 3px 0px 0px;
+  border: 7px inset rgb(254, 255, 233);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+#enter-btn:hover { background: #FFFDCD; }
+#enter-btn:active { background: #E4E8FF; }
+
+/* ===== MAIN CONTENT ===== */
+#main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* start from top, not centered */
+  min-height: 100vh;
+  gap: 15px; /* reduce gap a little */
+  text-align: center;
+  padding-top: 20px; /* space between top GIF and top of screen */
+  padding-bottom: 100px; /* space for music bar so it doesn't touch Oki button */
+}
+
+
+/* ===== SLIDE BOX ===== */
+/* ===== CONTENT BOX: 1995 Website Style ===== */
+#content-box {
+  width: 60vw;
+  max-width: 700px;
+  height: 60vh;
+  padding: 20px;
+  position: relative;
+
+  /* Retain original gradient colors */
+  background: radial-gradient(ellipse at center, #FFFDCD 0%, #FFC0F8 46%, #E4E8FF 100%);
+
+  /* Retro 90s look */
+  border: 4px outset #fff;  /* classic beveled edge */
+  box-shadow: inset -4px -4px 0 #ccc, inset 4px 4px 0 #888888; /* blocky inner shadows */
+  
+  /* Remove modern rounded corners */
+  border-radius: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Optional: add a pixel-y old-school border feel */
+  outline: 2px solid #ffffff;
+}
+
+/* Remove image styling since slides are now text-only */
+/* If you ever add images back, you can style them separately */
+#content-box img {
+  max-width: 80%;
+  max-height: 60%;
+  margin-bottom: 15px;
+}
+
+
+/* ===== SLIDE TEXT: Classic 1995 Rainbow Animation with Black Shadow ===== */
+#slide-text {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: -1px;
+  text-align: center;
+  width: 80%;
+  margin: 25px auto 0;
+
+  /* Rainbow gradient */
+  background: linear-gradient(
+    90deg,
+    red, orange, rgb(138, 138, 21), green, rgb(0, 195, 255), blue, rgb(221, 118, 221), red
+  );
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Animation */
+  animation: rainbow-animate 40s linear infinite;
+
+  /* Solid white shadow with opacity */
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Animate the rainbow */
+@keyframes rainbow-animate {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+
+
+
+
+/* ===== OKI BUTTON ===== */
+#oki-btn {
+  color: rgb(255, 65, 226);
+  font-size: 20px;
+  line-height: 20px;
+  padding: 9px 25px;
+  border-radius: 20px;
+  font-family: 'Libre Baskerville', "Times New Roman", Times, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-image: radial-gradient(rgb(255, 253, 205) 0%, rgb(255, 192, 248) 46%, rgb(228, 232, 255) 100%);
+  box-shadow: rgb(250, 255, 210) 2px 3px 0px 0px;
+  border: 7px inset rgb(254, 255, 233);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+#oki-btn:hover { background: #FFFDCD; }
+#oki-btn:active { background: #E4E8FF; }
+
+#oki-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ===== MUSIC BAR ===== */
+#music-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 70px;
+
+  background: #C0C0C0; /* classic 90s gray */
+  border: 4px outset #fff; /* chunky beveled edges */
+  box-shadow: inset -3px -3px 0 #888, inset 3px 3px 0 #fff; /* blocky inner shadow */
+  border-radius: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem; /* keep padding from original */
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: #000;
+  z-index: 1000;
+}
+
+.player-ui {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%; /* full width as before */
+  justify-content: space-between; /* ensures buttons/track info/volume stay spaced */
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.player-ui button {
+  background: #E0E0E0; /* light gray button */
+  border: 2px outset #fff; /* retro 90s beveled button */
+  padding: 5px 10px;
+  font-size: 1.5rem; /* keep your original size */
+  cursor: pointer;
+}
+
+.player-ui button:active {
+  border: 2px inset #fff;
+  background: #C0C0C0;
+  color: #000;
+}
+
+#track-info {
+  flex: 1;
+  text-align: center;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #c5ffbe; /* dark blue for retro feel */
+}
+
+.volume-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ===== RETRO 1995 NETSCAPE VOLUME SLIDER ===== */
+#volume-slider {
+  width: 100px;
+  height: 12px; /* slightly taller for that chunky look */
+  background: #C0C0C0;
+  border: 2px outset #fff; /* retro beveled track */
+  cursor: pointer;
+  appearance: none; /* remove default styling */
+}
+
+#volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #E0E0E0; /* light gray block */
+  border: 2px outset #fff; /* retro pressed effect */
+  border-radius: 0; /* square thumb */
+  cursor: pointer;
+}
+
+#volume-slider:active::-webkit-slider-thumb {
+  border: 2px inset #fff; /* simulate pressed-in thumb */
+  background: #C0C0C0;
+}
+
+/* Firefox */
+#volume-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: #E0E0E0;
+  border: 2px outset #fff;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+#volume-slider:active::-moz-range-thumb {
+  border: 2px inset #fff;
+  background: #C0C0C0;
+}
+
+/* IE/Edge */
+#volume-slider::-ms-thumb {
+  width: 14px;
+  height: 14px;
+  background: #E0E0E0;
+  border: 2px outset #fff;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+#volume-slider:active::-ms-thumb {
+  border: 2px inset #fff;
+  background: #C0C0C0;
+}
+/* Hide main until splash removed */
+#main-content[hidden] {
+  display: none;
+}
+
+
+
+/* ===== SIDE GIFS ON SPLASH SCREEN ===== */
+#side-gifs-left,
+#side-gifs-right {
+  position: absolute; /* relative to splash screen */
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000; /* above background but below button */
+  pointer-events: none; /* so clicks go through */
+}
+
+#side-gifs-left { left: 0; }
+#side-gifs-right { right: 0; }
+
+#side-gifs-left img,
+#side-gifs-right img {
+  display: block;
+  width: auto; /* keep original width */
+  height: auto;
+}
+
+/* Container for Enter button + GIF */
+#enter-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* space between GIF and button */
+  z-index: 2000; /* above side GIFs */
+}
+
+/* Paloma GIF styling */
+#paloma-gif {
+  display: block;
+  width: auto; /* keep original size */
+  height: auto;
+  max-width: 150px; /* optional: constrain width if it's huge */
+}
+
+
+/* Top GIF */
+#top-gif-container img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px;
+}
+
+/* Oki button GIFs */
+.oki-gif {
+  display: inline-block;
+}
+
+.oki-gif img {
+  height: 60px; /* smaller */
+  width: auto;  /* keep proportions */
+}
+
+#oki-gif-left { margin-right: 10px; }
+#oki-gif-right { margin-left: 10px; }
+
+/* fuegos button GIFs */
+.fuegos-gif {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10; /* above slide box content */
+}
+
+#fuegos-gif-left {
+  left: -220px;  /* adjust distance from slide box */
+}
+
+#fuegos-gif-right {
+  right: -220px; /* adjust distance from slide box */
+}
+
+.fuegos-gif img {
+  height: 200px;  /* keep your size */
+  width: auto;
+}

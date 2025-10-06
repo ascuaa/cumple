@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <title>Cumpleee</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <div id="side-gifs-left"></div>
+    <div id="side-gifs-right"></div>
+
+    <div id="enter-container">
+      <img id="paloma-gif" src="assets/enter/paloma.gif" alt="Paloma GIF">
+      <button id="enter-btn">Enter</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+<div id="main-content" hidden>
+  <!-- Top GIF -->
+  <div id="top-gif-container"></div>
+
+  <!-- Slide Box -->
+  <div id="content-box">
+    <div id="fuegos-gif-left" class="fuegos-gif"></div>
+    <p id="slide-text">Texto 1</p>
+    <div id="fuegos-gif-right" class="fuegos-gif"></div>
+  </div>
+
+  <!-- Oki Button GIFs -->
+<div id="oki-container">
+  <div id="oki-gif-left" class="oki-gif"></div>
+  <button id="oki-btn">Oki</button>
+  <div id="oki-gif-right" class="oki-gif"></div>
+</div>
+
+    <!-- Persistent Music Bar -->
+    <footer id="music-bar">
+      <audio id="global-audio" preload="metadata"></audio>
+      <div class="player-ui">
+  <div class="controls">
+    <button id="prev-btn">⏮</button>
+    <button id="play-btn">▶</button>
+    <button id="pause-btn">⏸</button>
+    <button id="next-btn">⏭</button>
+  </div>
+
+  <div id="track-info">No track loaded</div>
+
+  <div class="volume-container">
+    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+  </div>
+</div>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
+
