@@ -90,7 +90,7 @@ function loadMainGIFs() {
     audio.src = tracks[index];
     audio.play().catch(err => console.log("Autoplay blocked:", err));
     const fileName = tracks[index].split("/").pop().split(".")[0];
-    trackInfo.innerHTML = `<span>❤ escuxando ... ${fileName} ❤</span>`;
+    trackInfo.innerHTML = `<span>♡escuxando ... ${fileName} ♡</span>`;
   }
 
   playBtn.addEventListener("click", () => audio.play());
