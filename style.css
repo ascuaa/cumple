@@ -52,12 +52,14 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* start from top, not centered */
+  justify-content: flex-start;
   min-height: 100vh;
-  gap: 15px; /* reduce gap a little */
+  gap: 15px;
   text-align: center;
-  padding-top: 20px; /* space between top GIF and top of screen */
-  padding-bottom: 100px; /* space for music bar so it doesn't touch Oki button */
+  padding-top: 20px;
+  padding-bottom: 120px; /* ← add this to keep elements clear of the bar */
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -163,24 +165,22 @@ html, body {
 /* ===== MUSIC BAR ===== */
 #music-bar {
   position: fixed;
-  bottom: 20px;
+  bottom: 20px; /* keep your preferred spacing from bottom */
   left: 50%;
   transform: translateX(-50%);
   width: 700px;
   height: 70px;
-
-  background: #C0C0C0; /* classic 90s gray */
-  border: 4px outset #fff; /* chunky beveled edges */
-  box-shadow: inset -3px -3px 0 #888, inset 3px 3px 0 #fff; /* blocky inner shadow */
+  background: #C0C0C0;
+  border: 4px outset #fff;
+  box-shadow: inset -3px -3px 0 #888, inset 3px 3px 0 #fff;
   border-radius: 0;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem; /* keep padding from original */
+  padding: 0 1rem;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   color: #000;
-  z-index: 1000;
+  z-index: 99999; /* ← ensure nothing can cover it */
 }
 
 .player-ui {
