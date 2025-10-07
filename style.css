@@ -384,6 +384,15 @@ body {
     padding: 10px;
   }
 
+#track-info {
+  font-family: 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', cursive;
+  flex: 1;
+  text-align: center;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #c5ffbe; /* dark blue for retro feel */
+}
   /* Fit text */
   #slide-text {
     font-family: 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', cursive;
